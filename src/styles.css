@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+}
+
+@theme {
+  --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+@layer base {
+  html,
+  body,
+  #app {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer components {
+  .app-shell[data-theme="light"] {
+    --color-base-100: #ffffff;
+    --color-base-200: #f6f8fa;
+    --color-base-300: #d0d7de;
+    --color-base-content: #1f2328;
+    --color-primary: #2da44e;
+    --color-primary-content: #ffffff;
+    --color-secondary: #57606a;
+    --color-secondary-content: #ffffff;
+    --color-accent: #0969da;
+    --color-accent-content: #ffffff;
+    --color-neutral: #24292f;
+    --color-neutral-content: #ffffff;
+    --color-info: #0969da;
+    --color-info-content: #ffffff;
+    --color-success: #1a7f37;
+    --color-success-content: #ffffff;
+    --color-warning: #bf8700;
+    --color-warning-content: #ffffff;
+    --color-error: #cf222e;
+    --color-error-content: #ffffff;
+    --radius-box: 0.75rem;
+    --radius-field: 0.5rem;
+    --radius-selector: 0.5rem;
+    --border: 1px;
+    --depth: 0;
+    background:
+      radial-gradient(circle at top left, rgba(9, 105, 218, 0.07), transparent 24%),
+      radial-gradient(circle at top right, rgba(139, 148, 158, 0.09), transparent 20%),
+      linear-gradient(180deg, #f6f8fa 0%, #eef2f6 38%, #eaeef2 100%);
+  }
+
+  .app-shell[data-theme="dark"] {
+    --color-base-100: #161b22;
+    --color-base-200: #0d1117;
+    --color-base-300: #30363d;
+    --color-base-content: #e6edf3;
+    --color-primary: #238636;
+    --color-primary-content: #ffffff;
+    --color-secondary: #7d8590;
+    --color-secondary-content: #0d1117;
+    --color-accent: #2f81f7;
+    --color-accent-content: #ffffff;
+    --color-neutral: #010409;
+    --color-neutral-content: #e6edf3;
+    --color-info: #2f81f7;
+    --color-info-content: #ffffff;
+    --color-success: #238636;
+    --color-success-content: #ffffff;
+    --color-warning: #9e6a03;
+    --color-warning-content: #ffffff;
+    --color-error: #f85149;
+    --color-error-content: #ffffff;
+    --radius-box: 0.75rem;
+    --radius-field: 0.5rem;
+    --radius-selector: 0.5rem;
+    --border: 1px;
+    --depth: 0;
+    background:
+      radial-gradient(circle at top left, rgba(47, 129, 247, 0.13), transparent 24%),
+      radial-gradient(circle at top right, rgba(139, 148, 158, 0.08), transparent 20%),
+      linear-gradient(180deg, #0d1117 0%, #161b22 44%, #010409 100%);
+  }
+
+  .hero-panel {
+    box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
+  }
+
+  .app-shell[data-theme="light"] .surface-card {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-color: #d0d7de !important;
+    box-shadow: 0 1px 0 rgba(27, 31, 36, 0.04), 0 12px 28px rgba(31, 35, 40, 0.06) !important;
+  }
+
+  .app-shell[data-theme="dark"] .surface-card {
+    background: rgba(22, 27, 34, 0.9) !important;
+    border-color: #30363d !important;
+    box-shadow: 0 16px 36px rgba(1, 4, 9, 0.32) !important;
+  }
+
+  .app-shell[data-theme="light"] .upload-btn {
+    border-color: #2da44e !important;
+    background: #2da44e !important;
+    color: #ffffff !important;
+  }
+
+  .app-shell[data-theme="light"] .upload-btn:hover {
+    border-color: #2c974b !important;
+    background: #2c974b !important;
+  }
+
+  .app-shell[data-theme="light"] .feature-badge {
+    border-color: #d0d7de !important;
+    background: #f6f8fa !important;
+    color: #57606a !important;
+  }
+
+  .app-shell[data-theme="light"] .theme-toggle-btn,
+  .app-shell[data-theme="light"] .tool-btn {
+    border-color: #d0d7de !important;
+    background: #f6f8fa !important;
+    color: #24292f !important;
+  }
+
+  .app-shell[data-theme="light"] .theme-toggle-btn:hover,
+  .app-shell[data-theme="light"] .tool-btn:hover {
+    background: #f3f4f6 !important;
+    border-color: #afb8c1 !important;
+  }
+
+  .app-shell[data-theme="light"] .page-input {
+    border-color: #d0d7de !important;
+    background: #ffffff !important;
+    color: #1f2328 !important;
+  }
+
+  .app-shell[data-theme="light"] .history-entry {
+    border-color: #d0d7de !important;
+    background: #ffffff !important;
+  }
+
+  .app-shell[data-theme="light"] .history-entry:hover {
+    background: #f6f8fa !important;
+    border-color: #afb8c1 !important;
+  }
+
+  .app-shell[data-theme="light"] .history-entry-active {
+    border-color: rgba(9, 105, 218, 0.22) !important;
+    background: rgba(9, 105, 218, 0.08) !important;
+  }
+
+  .app-shell[data-theme="light"] .viewer-panel .border-b {
+    border-color: #d8dee4 !important;
+  }
+
+  .app-shell[data-theme="light"] .viewer-canvas {
+    background: #f6f8fa !important;
+    border: 1px solid #d8dee4;
+  }
+
+  .app-shell[data-theme="light"] .loading-state,
+  .app-shell[data-theme="light"] .empty-state {
+    background: rgba(246, 248, 250, 0.96) !important;
+    border-color: #d0d7de !important;
+  }
+
+  .app-shell[data-theme="light"] .error-state {
+    background: rgba(255, 235, 233, 0.92) !important;
+  }
+
+  .app-shell[data-theme="dark"] .feature-badge {
+    border-color: #30363d !important;
+    background: rgba(125, 133, 144, 0.1) !important;
+    color: #c9d1d9 !important;
+  }
+
+  .history-badge-ready {
+    border-color: #2da44e !important;
+    background: #2da44e !important;
+    color: #ffffff !important;
+  }
+
+  .app-shell[data-theme="dark"] .history-badge-ready {
+    border-color: #238636 !important;
+    background: #238636 !important;
+    color: #ffffff !important;
+  }
+
+
+  .viewer-host .ofd-viewer-wrapper,
+  .viewer-host .ofd-viewer-main,
+  .viewer-host .ofd-viewer-content {
+    min-height: 100%;
+    background: transparent !important;
+  }
+
+  .viewer-host .ofd-viewer-pages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 0.25rem;
+  }
+
+  .viewer-host .ofd-viewer-page {
+    margin-inline: auto;
+    overflow: hidden;
+    max-width: min(100%, 760px);
+    border-radius: 0.9rem;
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.12);
+  }
+
+  .app-shell[data-theme="dark"] .viewer-host .ofd-viewer-page {
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.36);
+  }
+}
