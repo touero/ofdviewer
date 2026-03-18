@@ -37,6 +37,30 @@ npm run build
 npm run preview
 ```
 
+## Deploy With Wrangler
+
+This project can be deployed to Cloudflare Workers static assets with `npx wrangler deploy`.
+
+1. Build the project:
+
+```bash
+npm run build
+```
+
+2. Authenticate with Cloudflare if needed:
+
+```bash
+npx wrangler login
+```
+
+3. Deploy:
+
+```bash
+npx wrangler deploy
+```
+
+The Wrangler configuration is stored in `wrangler.jsonc` and publishes the built `./dist` directory.
+
 ## Project Structure
 
 ```text
@@ -44,6 +68,7 @@ npm run preview
 ├── index.html
 ├── package.json
 ├── README.md
+├── wrangler.jsonc
 └── src
     ├── app.js
     ├── main.js
