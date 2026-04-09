@@ -40,6 +40,15 @@ export default {
               </div>
 
               <div class="flex flex-col gap-3 sm:flex-row xl:flex-col xl:items-end">
+                <a
+                  class="tool-btn btn btn-outline rounded-full"
+                  href="https://github.com/touero/ofdviewer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  项目地址
+                </a>
+
                 <button
                   type="button"
                   class="theme-toggle-btn btn btn-outline rounded-full"
